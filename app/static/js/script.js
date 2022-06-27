@@ -2,6 +2,7 @@ var xmlhttp = new XMLHttpRequest();
 var url = "./static/data/game.json";
 var clickCount = 0;
 var dataJson = [];
+var badMoove = false;
 
 xmlhttp.open('GET', url);
 xmlhttp.responseType = 'json';
@@ -42,6 +43,8 @@ xmlhttp.onload = function() {
     function getCell(cell) {
 
         document.getElementById('play').innerHTML = "choisir un pion";
+        badMoove = false;
+        document.getElementById('checkKing').innerHTML = "";
         
         if(!state) {
             var cellTag = cell.getElementsByTagName('i');
@@ -61,7 +64,11 @@ xmlhttp.onload = function() {
                 verifKingMoove(cell.id);
             } else if (cellTag[0].className.includes('knight')) {
                 verifKnightMoove(cell.id);
-            } else { return; }
+            }
+            if (badMoove) {
+                alert("impossible de déplacer cette pièce, en choisir une autre");
+                return;
+            }
             state = true;
             currentPiece = cell.innerHTML;
             currentCell = cell;
@@ -79,10 +86,14 @@ xmlhttp.onload = function() {
             cell.innerHTML = currentPiece;
             currentCell.innerHTML = "" + '<i class="fas fa-chess-"></i>';
             state = false;
+            checkKing(cell, cellTag);
             getTurn();
             var cellColor = document.getElementsByClassName('cell');
             for (var i = 0; i < cellColor.length; i++) {
                 cellColor[i].removeAttribute('style');
+            }
+            if (win()) {
+                document.getElementsByTagName('body')[0].innerHTML = '<h1 class="center">Il y a un gagnant, retour au menu principal</h1><div class="center"><a href="http://127.0.0.1:5000/"><button>Retour</button></a></div>';
             }
         }
 
@@ -203,6 +214,10 @@ xmlhttp.onload = function() {
                 cases.push('L' + (parseInt(linePiece[1])-1) + '-' + split[1]);
             }
         }
+
+        if (cases.length == 0) {
+            badMoove = true;
+        }
         
         console.log(cases);
         for (var i = 0; i < cases.length; i++) {
@@ -315,6 +330,10 @@ xmlhttp.onload = function() {
                 }
                 stopCaseBottom = true;
             }        
+        }
+
+        if (cases.length == 0) {
+            badMoove = true;
         }
 
         console.log(cases);
@@ -460,6 +479,10 @@ xmlhttp.onload = function() {
             }
         }
 
+        if (cases.length == 0) {
+            badMoove = true;
+        }
+
         console.log(cases);
         for (var i = 0; i < cases.length; i++) {
             document.getElementById(cases[i]).style.backgroundColor = "green";
@@ -475,6 +498,8 @@ xmlhttp.onload = function() {
     function verifQueenMoove(cell) {
         verifRookMoove(cell);
         verifBishopMoove(cell);
+
+        badMoove = false;
     }
 
     function verifKingMoove(cell) {
@@ -602,7 +627,7 @@ xmlhttp.onload = function() {
 
         for (var i = (parseInt(casePiece[1])); i < (parseInt(casePiece[1])+1); i++) {
             count++;
-            console.log('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])+count));
+            // console.log('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])+count));
             if (((parseInt(linePiece[1])+count) < 8) && ((parseInt(casePiece[1])+count) < 8)) {
                 var nextCells = document.getElementById('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])+count)).getElementsByTagName('i')[0].className;
                 if ((!nextCells.includes('white')) && (!nextCells.includes('black'))) {
@@ -631,7 +656,7 @@ xmlhttp.onload = function() {
 
         for (var i = (parseInt(casePiece[1])); i > (parseInt(casePiece[1])-1); i--) {
             count++;
-            console.log('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])-count));
+            // console.log('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])-count));
             if ((parseInt(linePiece[1])+count) < 8) {
                 var nextCells = document.getElementById('L' + (parseInt(linePiece[1])+count) + '-' + 'C' + (parseInt(casePiece[1])-count)).getElementsByTagName('i')[0].className;
                 if ((!nextCells.includes('white')) && (!nextCells.includes('black'))) {
@@ -660,7 +685,7 @@ xmlhttp.onload = function() {
 
         for (var i = (parseInt(casePiece[1])); i > (parseInt(casePiece[1])-1); i--) {
             count++;
-            console.log('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])-count));
+            // console.log('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])-count));
             if (((parseInt(casePiece[1])-count) >= 0) && ((parseInt(linePiece[1])-count) >= 0)) {
                 var nextCells = document.getElementById('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])-count)).getElementsByTagName('i')[0].className;
                 if ((!nextCells.includes('white')) && (!nextCells.includes('black'))) {
@@ -689,9 +714,8 @@ xmlhttp.onload = function() {
 
         for (var i = (parseInt(casePiece[1])); i < (parseInt(casePiece[1])+1); i++) {
             count++;
-            console.log('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])+count));
+            // console.log('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])+count));
             if (((parseInt(casePiece[1])+count) < 8) && ((parseInt(linePiece[1])-count) >= 0)) {
-                console.log('pass');
                 var nextCells = document.getElementById('L' + (parseInt(linePiece[1])-count) + '-' + 'C' + (parseInt(casePiece[1])+count)).getElementsByTagName('i')[0].className;
                 if ((!nextCells.includes('white')) && (!nextCells.includes('black'))) {
                     if (!stopCaseBottom) {
@@ -713,6 +737,10 @@ xmlhttp.onload = function() {
                     stopCaseBottom = true;
                 } 
             }
+        }
+
+        if (cases.length == 0) {
+            badMoove = true;
         }
 
         console.log(cases);
@@ -771,9 +799,71 @@ xmlhttp.onload = function() {
         verif('L' + (parseInt(linePiece[1])-1) + '-' + 'C' + (parseInt(casePiece[1])+2));
         verif('L' + (parseInt(linePiece[1])-1) + '-' + 'C' + (parseInt(casePiece[1])-2));
 
+        if (cases.length == 0) {
+            badMoove = true;
+        }
+
         console.log(cases);
         for (var i = 0; i < cases.length; i++) {
             document.getElementById(cases[i]).style.backgroundColor = "green";
+        }
+
+    }
+
+    function checkKing (cell, piece) {
+        let checkCell = cell.id;
+        let checkPiece = piece[0].className;
+        if (checkPiece.includes('pawn')) {
+            verifPawnMoove(checkCell);
+            getKing();
+        } else if (checkPiece.includes('rook')) {
+            verifRookMoove(checkCell);
+            getKing();
+        } else if (checkPiece.includes('bishop')) {
+            verifBishopMoove(checkCell);
+            getKing();
+        } else if (checkPiece.includes('queen')) {
+            verifQueenMoove(checkCell);
+            getKing();
+        } else if (checkPiece.includes('king')) {
+            verifKingMoove(checkCell);
+            getKing();
+        } else if (checkPiece.includes('knight')) {
+            verifKnightMoove(checkCell);
+            getKing();
+        }
+
+        function getKing() {
+            for (var i = 0; i < cases.length; i++) {
+                console.log(cases);
+                king = document.getElementById(cases[i]).getElementsByTagName('i')[0].className;
+                if (king.includes('king')) {
+                    document.getElementById('checkKing').innerHTML = "ECHEC, déplacer le roi";
+                }
+            }
+        }
+    }
+
+    function win() {
+        let winner = document.getElementsByClassName('cell');
+        let whiteKing = false;
+        let blackKing = false;
+        let win = false;
+        for (var i = 0; i < winner.length; i++) {
+            if (winner[i].getElementsByTagName('i')[0].className.includes('king') && winner[i].getElementsByTagName('i')[0].className.includes('white')) {
+                whiteKing = true;
+            }
+            if (winner[i].getElementsByTagName('i')[0].className.includes('king') && winner[i].getElementsByTagName('i')[0].className.includes('black')) {
+                blackKing = true;
+            }
+        }
+        if (!whiteKing) {
+            document.getElementById('checkKing').innerHTML = "ECHEC ET MAT, " + playerTwo['name'] + " GAGNE LA PARTIE";
+            return win = true;
+        }
+        if (!blackKing) {
+            document.getElementById('checkKing').innerHTML = "ECHEC ET MAT, " + playerOne['name'] + " GAGNE LA PARTIE";
+            return win = true;
         }
 
     }
