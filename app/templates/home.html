@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu d'échec</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 id="titleIndex">Bienvenue sur votre jeu d'échec !</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row spaceButton">
+            <div class="col-sm-12">
+                <a href="http://127.0.0.1:5000/game""><button class="styleButton">JOUER</button></a>
+            </div>
+        </div>
+        <div class="row spaceButton">
+            <div class="col-sm-12">
+                <a href="https://ecole.apprendre-les-echecs.com/regles-echecs/"><button class="styleButton">REGLES</button></a>
+            </div>
+        </div>  
+        <div class="row spaceButton">
+            <div class="col-sm-12">
+                <a href="http://127.0.0.1:5000/playerOne"><button class="styleButton">PROFIL {{player_one_name}}</button></a>
+            </div>
+        </div>
+        <div class="row spaceButton">
+            <div class="col-sm-12">
+                <a href="http://127.0.0.1:5000/playerTwo"><button class="styleButton">PROFIL {{player_two_name}}</button></a>
+            </div>
+        </div>
+        <div class="row spaceButton">
+            <div class="col-sm-12">
+                <button class="styleButton">PARAMETRES</button>
+            </div>
+        </div>  
+    </div>
+    
+</body>
+</html>

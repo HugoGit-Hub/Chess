@@ -1,0 +1,120 @@
+/* -----------------------
+general css 
+-----------------------*/
+
+    /* -----------------------
+    index page */
+
+    #body{
+        background-image: url("../pictures/bgIndex.png");
+    }
+
+    #titleIndex{
+        text-align: center;
+        color: white;
+        font-family: 'Macondo', cursive;
+    }
+
+    .spaceButton{
+        text-align: center;
+        margin: 10vh 0;
+    }
+
+    .styleButton{
+        font-size: 5vh;
+        border: solid 2px;
+        border-radius: 10vh;
+        background-color: antiquewhite;
+        padding: 5vh 10vw;
+        text-transform: uppercase;
+    }
+
+    .styleButton:hover{
+        background-color: black;
+        color: antiquewhite;
+        transition: ease 1s;
+    }
+
+    /* -----------------------
+    profil page */
+
+    #centerBody{
+        margin: 25vh;
+    }
+
+    #titleProfil{
+        text-align: center;
+        color: black;
+        font-family: 'Macondo', cursive;
+    }
+
+    .styleParag{
+        text-align: center;
+    }
+
+    .spaceParag{
+        margin: 15vh 0;
+    }
+
+    /* -----------------------
+    game page */
+
+    table {
+        border: 6px solid #7e3327;
+    }
+
+    .cell {
+        height: 32px;
+        width: 30px;
+        border: 0px solid;
+        text-align: center;
+    }
+
+    .blackcell {
+        background-color: grey;
+    }
+
+    .whitecell {
+        background-color: white;
+    }
+
+    .piecesSize {
+        width: 100%;
+        height: 100%;
+    }
+
+    .white {
+        color: #dec18c;
+        padding: 30%;
+    }
+
+    .black {
+        color: black;
+        padding: 30%;
+    }
+
+    .centerBoard{
+        margin: 0 auto;
+    }
+
+    .center{
+        text-align: center;
+    }
+
+    .iconhoover:hover{
+        color: #0faf0fc2;
+    }
+
+    /* -----------------------
+    user name page */
+
+    .formUserName{
+        border: 1px solid;
+        text-align: center;
+        width: 50%;
+        margin: 5% 25%;
+    }
+
+    .blockPlayer{
+        margin: 2%;
+    }

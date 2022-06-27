@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande des nom utilisateus</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <form class="formUserName" action="{{ url_for('user') }}" method="post">
+        <h1>Entrez le nom des deux joueurs</h1>
+        <div class="blockPlayer">
+            <label for="playerOne">Nom du joueur 1 : </label>
+            <input name="playerOne" placeholder="entrer un nom" required>
+        </div>
+        <div class="blockPlayer">
+            <label for="playerTwo">Nom du joueur 2 : </label>
+            <input name="playerTwo" placeholder="entrer un nom" required>
+        </div>
+        <button type="submit" class="blockPlayer">Valider</button>
+    </form>
+    
+</body>
+</html>

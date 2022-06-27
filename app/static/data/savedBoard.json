@@ -1,0 +1,356 @@
+{
+    "lines": [
+        {
+            "cases": [
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "rook"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "knight"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "bishop"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "king"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "queen"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "bishop"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "knight"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "rook"
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "white",
+                    "occupate": 1,
+                    "piece": "pawn"
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                },
+                {
+                    "color": null,
+                    "occupate": 0,
+                    "piece": null
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "pawn"
+                }
+            ]
+        },
+        {
+            "cases": [
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "rook"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "knight"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "bishop"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "king"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "queen"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "bishop"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "knight"
+                },
+                {
+                    "color": "black",
+                    "occupate": 1,
+                    "piece": "rook"
+                }
+            ]
+        }
+    ]
+}
